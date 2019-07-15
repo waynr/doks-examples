@@ -1,24 +1,15 @@
 language: go
 
 env:
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=terraform
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=network-policy
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=monitoring
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=istio
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=local-pv
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=hpa
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=vpa
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=kubedb
-  - CLUSTER_VERSION=1.14.1-do.4
-    EXAMPLE=xfs
+  - EXAMPLE=terraform
+  - EXAMPLE=network-policy
+  - EXAMPLE=monitoring
+  - EXAMPLE=istio
+  - EXAMPLE=local-pv
+  - EXAMPLE=hpa
+  - EXAMPLE=vpa
+  - EXAMPLE=kubedb
+  - EXAMPLE=xfs
 
 before_script:
   - go get -u github.com/digitalocean/doctl/cmd/doctl
@@ -31,7 +22,7 @@ script:
   - cd $EXAMPLE && script/test
 
 branches:
-  only: 
+  only:
     - master
 
 notifications:
